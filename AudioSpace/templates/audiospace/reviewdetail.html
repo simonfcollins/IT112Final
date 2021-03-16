@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>{{review.revTitle}}</h2>
+<p> Posted by {{review.userID}} on {{review.datePosted}}<br/>
+    {% if review.rating == 0 %}
+        <p>&#9734 &#9734 &#9734 &#9734 &#9734</p>
+    {% elif review.rating == 1 %}
+         <p>&#9733 &#9734 &#9734 &#9734 &#9734</p>
+    {% elif review.rating == 2 %}
+        <p>&#9733 &#9733 &#9734 &#9734 &#9734</p>
+    {% elif review.rating == 3 %}
+        <p>&#9733 &#9733 &#9733 &#9734 &#9734</p>
+    {% elif review.rating == 4 %}
+        <p>&#9733 &#9733 &#9733 &#9733 &#9734</p>
+    {% else %}
+        <p>&#9733 &#9733 &#9733 &#9733 &#9733</p>
+    {% endif %}
+    Description : {{review.revText}}
+
+</p>
+
+
+{% endblock %}

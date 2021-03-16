@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content%}
+
+    <h2 style="font-family: Impact; letter-spacing: 3px">Reviews</h2>
+
+
+<ul>
+    {% for r in review_list %}
+        <li style="border-bottom: solid; border-width: 1px; padding-bottom: 15px;">
+            <a href = "{% url 'rdetail' id=r.id %}" ><h4>{{r.revTitle}}</h4></a>
+            {% if r.rating == 0 %}
+                <p>&#9734 &#9734 &#9734 &#9734 &#9734</p>
+            {% elif r.rating == 1 %}
+                <p>&#9733 &#9734 &#9734 &#9734 &#9734</p>
+            {% elif r.rating == 2 %}
+                <p>&#9733 &#9733 &#9734 &#9734 &#9734</p>
+            {% elif r.rating == 3 %}
+                <p>&#9733 &#9733 &#9733 &#9734 &#9734</p>
+            {% elif r.rating == 4 %}
+                <p>&#9733 &#9733 &#9733 &#9733 &#9734</p>
+            {% else %}
+                <p>&#9733 &#9733 &#9733 &#9733 &#9733</p>
+            {% endif %}
+
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

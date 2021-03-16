@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 style="font-family: Impact; letter-spacing: 3px">Forums</h2>
+
+
+<ul>
+    {% for f in forum_list %}
+        <li style="border-bottom: solid; border-width: 1px; padding-bottom: 15px;">
+            <a href = "{% url 'fdetail' id=f.id %}" ><h4>{{f.topic}}</h4></a>
+            <small>{{f.userID}}  {{f.date_created}}</small>
+            <br/>    
+            {{f.description}}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
