@@ -8,7 +8,6 @@ class Forum(models.Model):
     userID = models.ForeignKey(User, null = True, on_delete = models.DO_NOTHING)
     topic= models.CharField(max_length=300)
     description = models.TextField(blank=True)
-    refLinks = models.CharField(max_length=100, null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     
     def __str__(self):
@@ -26,7 +25,6 @@ class Discussion(models.Model):
     discuss = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
- 
     def __str__(self):
         return str(self.forum)
     

@@ -7,6 +7,9 @@ urlpatterns=[
     path('reviewdetail/<int:id>' , views.reviewdetail, name = 'rdetail'),
     path('forums/', views.getforums, name = 'forums'),
     path('forumdetail/<int:id>' , views.forumdetail, name = 'fdetail'),
-    #path('addInForum/', views.addInForum, name = 'addInForum'),
-    #path('addInDiscussion/', views.addInDiscussion, name = 'addInDiscussion'),
+    path('newreview/', views.newreview, name = 'newreview'),
+    path('newforum/', views.newforum, name = 'newforum'),
+    path('newcomment/', views.newcomment, name = 'newcomment'),
+    path('loginmessage/', views.loginmessage, name = 'loginmessage'),
+    path('logoutmessage/', views.logoutmessage, name = 'logoutmessage'),
 ]

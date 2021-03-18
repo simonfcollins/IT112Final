@@ -1,12 +1,12 @@
 from django import forms
 from .models import Discussion, Forum, Review
 
-class CreateInForum(forms.ModelForm):
+class ForumForm(forms.ModelForm):
     class Meta:
         model= Forum
         fields = '__all__'
  
-class CreateInDiscussion(forms.ModelForm):
+class DiscussionForm(forms.ModelForm):
     class Meta:
         model= Discussion
         fields = '__all__'
