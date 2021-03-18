@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% block content%}
 
-    <h2 style="font-family: Impact; letter-spacing: 3px">Reviews</h2>
-
+<h2 style="font-family: Impact; letter-spacing: 3px">Reviews</h2>
+<p align = "right">
+    <button style = "background-color: gray;"> 
+        <a href = "{% url 'newreview' %}" style = "color: white;">New Review</a>
+    </button>
+</p>
 
 <ul>
     {% for r in review_list %}
-        <li style="border-bottom: solid; border-width: 1px; padding-bottom: 15px;">
+        <li style="list-style-type: none; border-bottom: solid; border-width: 1px; padding-bottom: 15px;">
             <a href = "{% url 'rdetail' id=r.id %}" ><h4>{{r.revTitle}}</h4></a>
             {% if r.rating == 0 %}
                 <p>&#9734 &#9734 &#9734 &#9734 &#9734</p>

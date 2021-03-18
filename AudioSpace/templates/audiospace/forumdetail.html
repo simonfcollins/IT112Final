@@ -2,19 +2,27 @@
 {% block content %}
 
 <h2 style="font-family: Impact; letter-spacing: 3px;">{{forum.topic}}</h2>
-    <small>Posted by {{forum.userID}} on {{forum.date_created}}</small>
-    <br>
-    <p style = "border-bottom: solid; border-width: 1px; padding-bottom: 15px;">{{forum.description}}</p>
+    <p style = "border-bottom: solid; border-width: 1px; padding-bottom: 15px;">{{forum.description}}
+        <br>
+        <small>Posted by {{forum.userID}} on {{forum.date_created}}</small>
+    </p>
 
+
+<button style = "background-color: gray;"> 
+    <a href = "{% url 'newcomment' %}" style = "color: white;">Comment</a>
+</button>
 <h3>Comments:</h3>
+    
 <ul>
-    <li style = "list-style-type: none; border-bottom: solid; border-width: 1px; padding-bottom: 15px;">
+    <li style = "list-style-type: none;">
     {% for discuss in discussions%}
         {% for objs in discuss %}  
         {% if objs.forum == forum %}
         {{ objs.discuss }}
         <br>
-        <small>{{ objs.userID }} on {{ objs.date_created }}</small>
+        <small style = "list-style-type: none; border-bottom: solid; border-width: 1px; padding-bottom: 15px;">
+            {{ objs.userID }} on {{ objs.date_created }}</small>
+            <br>
             <br>
             {% endif %}
         {% endfor %}
