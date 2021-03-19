@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>{{review.revTitle}}</h2>
-<p> Posted by {{review.userID}} on {{review.datePosted}}<br/>
+<h2 style="font-family: Impact; letter-spacing: 3px;">{{review.revTitle}}</h2>
+
     {% if review.rating == 0 %}
         <p>&#9734 &#9734 &#9734 &#9734 &#9734</p>
     {% elif review.rating == 1 %}
@@ -16,6 +16,8 @@
     {% else %}
         <p>&#9733 &#9733 &#9733 &#9733 &#9733</p>
     {% endif %}
+    <small>Posted by {{review.userID}} on {{review.datePosted}}</small>
+    <br>
     Description : {{review.revText}}
 
 </p>

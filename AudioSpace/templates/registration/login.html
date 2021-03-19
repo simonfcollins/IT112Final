@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>Login</h2>
+<h2 style="font-family: Impact; letter-spacing: 3px;">Login</h2>
 <form method = 'POST'>
     {% csrf_token %}
     {{form.as_p}}
